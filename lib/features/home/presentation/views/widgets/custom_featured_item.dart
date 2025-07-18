@@ -2,8 +2,8 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
-class CustomItem extends StatelessWidget {
-  const CustomItem({
+class CustomFeaturedItem extends StatelessWidget {
+  const CustomFeaturedItem({
     super.key,
   });
 
