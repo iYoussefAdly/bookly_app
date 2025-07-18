@@ -51,7 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
   }
    void navigateToHome() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 4), () {
       Get.to(() => HomeView(),transition: Transition.fade,duration:kTransitionDuration);
     });
   }
