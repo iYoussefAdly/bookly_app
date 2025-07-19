@@ -64,12 +64,11 @@ flutter:
   # example:
   # fonts:
   #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
+    #   fonts:
+    #     - assets/fonts/segoe-ui-this/segoeuithibd.ttf
+    # - family: SegoeUI
+    #   fonts:
+    #     - asset: assets/fonts/segoe-ui-this/segoeuithibd.ttf
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
