@@ -1,5 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,6 +16,7 @@ class BookDetailsViewBody extends StatelessWidget {
       child: Column(
         children: [
           SafeArea(child: CustomBookDetailsAppBar()),
+          SizedBox(height: 40,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .18),
             child: CustomBookImage(),
@@ -32,6 +34,8 @@ class BookDetailsViewBody extends StatelessWidget {
               style: Styles.textStyle18.copyWith(color: kRomanSliverColor),
             ),
           ),
+           SizedBox(height: 18),
+          BookRatingItem(mainAxisAlignment: MainAxisAlignment.center,)
         ],
       ),
     );
