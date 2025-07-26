@@ -6,8 +6,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_
 import 'package:bookly_app/features/home/presentation/views/widgets/image_of_the_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+class BookItem extends StatelessWidget {
+  const BookItem({super.key});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
