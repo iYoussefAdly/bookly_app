@@ -16,14 +16,16 @@ class HomeRepoImpl implements HomeRepo {
         endPoint:
             "volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest",
       );
-        List<BookModel> booksList = [];
-        for (var item in data["items"]) {
-          booksList.add(BookModel.fromJson(item));
-        }
-       return right(booksList);
-     
-    } on DioException catch (e) {
-      
+      List<BookModel> booksList = [];
+      for (var item in data["items"]) {
+        booksList.add(BookModel.fromJson(item));
+      }
+      return right(booksList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailuer.fromDioException(e));
+      }
+      return left(ServerFailuer(errorMessage: e.toString()));
     }
   }
 
