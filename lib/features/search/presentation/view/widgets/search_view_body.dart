@@ -19,7 +19,8 @@ class SearchViewBody extends StatelessWidget {
                 SizedBox(height: 20),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Search result", style: Styles.textStyle20)),
+                  child: Text("Search result", style: Styles.textStyle20),
+                ),
                 SizedBox(height: 14),
               ],
             ),

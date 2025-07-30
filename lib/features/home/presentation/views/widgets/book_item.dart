@@ -6,6 +6,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_
 import 'package:bookly_app/features/home/presentation/views/widgets/image_of_the_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+
 class BookItem extends StatelessWidget {
   const BookItem({super.key});
   @override
@@ -16,10 +17,7 @@ class BookItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.2 / 4,
-              child: ImageOfTheItem(),
-            ),
+            AspectRatio(aspectRatio: 2.2 / 4, child: ImageOfTheItem()),
             SizedBox(width: 30),
             Expanded(
               child: Padding(
@@ -36,14 +34,14 @@ class BookItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(height: 5),
                     Text(
                       "J.K.Rowling",
-                      style: Styles.textStyle14.copyWith(color: kRomanSliverColor),
+                      style: Styles.textStyle14.copyWith(
+                        color: kRomanSliverColor,
+                      ),
                     ),
-                    SizedBox(
-                      height: 5,
-                    ),
+                    SizedBox(height: 5),
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +52,7 @@ class BookItem extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          BookRatingItem()
+                          BookRatingItem(),
                         ],
                       ),
                     ),
@@ -68,4 +66,3 @@ class BookItem extends StatelessWidget {
     );
   }
 }
-

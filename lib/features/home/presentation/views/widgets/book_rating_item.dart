@@ -2,8 +2,12 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class BookRatingItem extends StatelessWidget {
-  const BookRatingItem({super.key,  this.mainAxisAlignment=MainAxisAlignment.start});
+  const BookRatingItem({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
   final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,10 @@ class BookRatingItem extends StatelessWidget {
           SizedBox(width: 5),
           Text(
             '(254)',
-            style: Styles.textStyle14.copyWith(color: kRomanSliverColor,fontWeight: FontWeight.w600),
+            style: Styles.textStyle14.copyWith(
+              color: kRomanSliverColor,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ],
       ),

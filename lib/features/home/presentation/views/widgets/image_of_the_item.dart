@@ -2,9 +2,7 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 
 class ImageOfTheItem extends StatelessWidget {
-  const ImageOfTheItem({
-    super.key,
-  });
+  const ImageOfTheItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class ImageOfTheItem extends StatelessWidget {
           image: AssetImage(AssetsData.staticImage),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
