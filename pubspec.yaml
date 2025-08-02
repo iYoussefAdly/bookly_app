@@ -36,6 +36,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_getit: ^3.0.1
   font_awesome_icon_class: ^0.0.6
   go_router: ^16.0.0
   google_fonts: ^6.2.1
