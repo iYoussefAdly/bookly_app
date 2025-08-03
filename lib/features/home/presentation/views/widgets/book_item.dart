@@ -17,7 +17,7 @@ class BookItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            AspectRatio(aspectRatio: 2.2 / 4, child: ImageOfTheItem()),
+            AspectRatio(aspectRatio: 2.7 / 4, child: ImageOfTheItem()),
             SizedBox(width: 30),
             Expanded(
               child: Padding(

@@ -12,7 +12,7 @@ class ImageOfTheItem extends StatelessWidget {
           image: AssetImage(AssetsData.staticImage),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
       ),
     );
   }
