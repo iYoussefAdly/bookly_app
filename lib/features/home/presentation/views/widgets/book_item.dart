@@ -2,13 +2,15 @@ import 'dart:ui';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_published_date.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/image_of_the_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
+  const BookItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +19,10 @@ class BookItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            AspectRatio(aspectRatio: 2.7 / 4, child: ImageOfTheItem()),
+            AspectRatio(
+              aspectRatio: 2.7 / 4,
+              child: ImageOfTheItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            ),
             SizedBox(width: 30),
             Expanded(
               child: Padding(
@@ -28,7 +33,7 @@ class BookItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: Text(
-                        "Harry Potter and the Goblet of Fire",
+                        bookModel.volumeInfo.title!,
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -36,7 +41,7 @@ class BookItem extends StatelessWidget {
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "J.K.Rowling",
+                      bookModel.volumeInfo.authors![0],
                       style: Styles.textStyle14.copyWith(
                         color: kRomanSliverColor,
                       ),
@@ -47,12 +52,12 @@ class BookItem extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "19.99\$",
+                            "Free",
                             style: Styles.textStyle20.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          BookRatingItem(),
+                          BookPublishedDate(publishedDate: bookModel.volumeInfo.publishedDate!, count: bookModel.volumeInfo.pageCount!,),
                         ],
                       ),
                     ),

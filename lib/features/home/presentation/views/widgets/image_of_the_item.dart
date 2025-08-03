@@ -1,19 +1,16 @@
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 
 class ImageOfTheItem extends StatelessWidget {
-  const ImageOfTheItem({super.key});
-
+  const ImageOfTheItem({super.key, required this.imageUrl});
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AssetsData.staticImage),
-          fit: BoxFit.cover,
-        ),
-        borderRadius: BorderRadius.circular(8),
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: CachedNetworkImage(
+        fit: BoxFit.fill,
+        imageUrl: imageUrl),
     );
   }
 }
