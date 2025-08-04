@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
@@ -14,7 +13,7 @@ class BookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel),
       child: SizedBox(
         height: 160,
         child: Row(
