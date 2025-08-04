@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_getit: ^3.0.1
   font_awesome_icon_class: ^0.0.6
+  get_it: ^7.6.7
   go_router: ^16.0.0
   google_fonts: ^6.2.1
   shimmer_animation: ^2.2.2
@@ -77,6 +78,7 @@ flutter:
     #   fonts:
     #     - assets/fonts/segoe-ui-this/segoeuithibd.ttf
     # - family: SegoeUI
+    #   fonts:
     #   fonts:
     #     - asset: assets/fonts/segoe-ui-this/segoeuithibd.ttf
   #       - asset: fonts/TrajanPro.ttf

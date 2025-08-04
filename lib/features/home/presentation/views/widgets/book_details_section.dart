@@ -16,12 +16,12 @@ class BookDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
           child: CustomBookImage(
-            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+            imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail,
           ),
         ),
         SizedBox(height: 33),
         Text(
-          bookModel.volumeInfo.title!,
+          bookModel.volumeInfo.title ?? "Unknown Title",
           style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
@@ -29,7 +29,9 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.8,
           child: Text(
-            bookModel.volumeInfo.authors![0],
+            bookModel.volumeInfo.authors?.isNotEmpty == true 
+                ? bookModel.volumeInfo.authors![0]
+                : "Unknown Author",
             style: Styles.textStyle18.copyWith(color: kRomanSliverColor),
             textAlign: TextAlign.center,
           ),

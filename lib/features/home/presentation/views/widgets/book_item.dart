@@ -20,7 +20,7 @@ class BookItem extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 2.7 / 4,
-              child: ImageOfTheItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+              child: ImageOfTheItem(imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail),
             ),
             SizedBox(width: 30),
             Expanded(
@@ -32,7 +32,7 @@ class BookItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: Text(
-                        bookModel.volumeInfo.title!,
+                        bookModel.volumeInfo.title ?? "Unknown Title",
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -40,7 +40,9 @@ class BookItem extends StatelessWidget {
                     ),
                     SizedBox(height: 5),
                     Text(
-                      bookModel.volumeInfo.authors![0],
+                      bookModel.volumeInfo.authors?.isNotEmpty == true 
+                          ? bookModel.volumeInfo.authors![0]
+                          : "Unknown Author",
                       style: Styles.textStyle14.copyWith(
                         color: kRomanSliverColor,
                       ),
@@ -56,7 +58,7 @@ class BookItem extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          BookPublishedDate(publishedDate: bookModel.volumeInfo.publishedDate??"2004", count: bookModel.volumeInfo.pageCount!,),
+                          BookPublishedDate(publishedDate: bookModel.volumeInfo.publishedDate??"2004", count: bookModel.volumeInfo.pageCount ?? 0,),
                         ],
                       ),
                     ),

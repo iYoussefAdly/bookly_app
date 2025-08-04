@@ -4,8 +4,7 @@ import 'package:bookly_app/features/search/presentation/view/widgets/search_resu
 import 'package:flutter/cupertino.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
-
+  const SearchViewBody({super.key,});
   @override
   Widget build(BuildContext context) {
     return Padding(
