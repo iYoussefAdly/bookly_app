@@ -57,7 +57,7 @@ class BookItem extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          BookPublishedDate(publishedDate: bookModel.volumeInfo.publishedDate!, count: bookModel.volumeInfo.pageCount!,),
+                          BookPublishedDate(publishedDate: bookModel.volumeInfo.publishedDate??"2004", count: bookModel.volumeInfo.pageCount!,),
                         ],
                       ),
                     ),
